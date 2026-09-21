@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Linux95 Terminal
+Exec=lxterminal
+Icon=utilities-terminal
+Terminal=false

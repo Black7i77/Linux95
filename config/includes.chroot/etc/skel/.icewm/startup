@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Desktop icons/background manager
+pcmanfm --desktop >/dev/null 2>&1 &
+
+# Network tray icon
+nm-applet >/dev/null 2>&1 &

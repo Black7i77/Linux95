@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<JWM>
+
+<RootMenu onroot="12" labeled="false" height="24">
+  <Program icon="utilities-terminal" label="Terminal">lxterminal</Program>
+  <Program icon="system-file-manager" label="File Manager">pcmanfm</Program>
+  <Program icon="accessories-text-editor" label="Text Editor">mousepad</Program>
+  <Program icon="web-browser" label="Firefox">firefox-esr</Program>
+  <Separator/>
+  <Program icon="computer" label="System Info">lxterminal -e fastfetch</Program>
+  <Restart label="Restart Desktop"/>
+  <Exit label="Log Out"/>
+</RootMenu>
+
+<Tray x="0" y="-1" height="32" autohide="false">
+  <TrayButton label=" Start ">root:1</TrayButton>
+  <TrayButton label=" Desktop ">showdesktop</TrayButton>
+  <Pager/>
+  <TaskList maxwidth="260"/>
+  <Dock/>
+  <Clock format="%H:%M"/>
+</Tray>
+
+<WindowStyle>
+  <Font>DejaVu Sans-10:bold</Font>
+  <Width>3</Width>
+  <Height>22</Height>
+  <Corner>0</Corner>
+  <Active>
+    <Text>#ffffff</Text>
+    <Title>#000080:#0000a8</Title>
+    <Corner>#000080</Corner>
+    <Outline>#000000</Outline>
+  </Active>
+  <Inactive>
+    <Text>#dcdcdc</Text>
+    <Title>#808080:#a0a0a0</Title>
+    <Corner>#808080</Corner>
+    <Outline>#404040</Outline>
+  </Inactive>
+</WindowStyle>
+
+<TrayStyle group="true" list="all">
+  <Font>DejaVu Sans-10</Font>
+  <Background>#c0c0c0</Background>
+  <Foreground>#000000</Foreground>
+  <Outline>#404040</Outline>
+</TrayStyle>
+
+<TaskListStyle>
+  <Font>DejaVu Sans-10</Font>
+  <Active>
+    <Foreground>#ffffff</Foreground>
+    <Background>#000080</Background>
+  </Active>
+  <Foreground>#000000</Foreground>
+  <Background>#c0c0c0</Background>
+</TaskListStyle>
+
+<MenuStyle>
+  <Font>DejaVu Sans-10</Font>
+  <Foreground>#000000</Foreground>
+  <Background>#c0c0c0</Background>
+  <Active>
+    <Foreground>#ffffff</Foreground>
+    <Background>#000080</Background>
+  </Active>
+</MenuStyle>
+
+<PopupStyle>
+  <Font>DejaVu Sans-10</Font>
+  <Outline>#000000</Outline>
+  <Foreground>#000000</Foreground>
+  <Background>#ffffcc</Background>
+</PopupStyle>
+
+<Desktops width="1" height="1">
+  <Background type="solid">#008080</Background>
+</Desktops>
+
+<StartupCommand>xsetroot -solid '#008080'</StartupCommand>
+<StartupCommand>pcmanfm --desktop --profile linux95</StartupCommand>
+<StartupCommand>nm-applet</StartupCommand>
+
+</JWM>

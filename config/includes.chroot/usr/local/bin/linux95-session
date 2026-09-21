@@ -1,0 +1,8 @@
+#!/bin/sh
+export XDG_CURRENT_DESKTOP=Linux95
+export DESKTOP_SESSION=linux95
+xsetroot -solid '#008080'
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY DESKTOP_SESSION XDG_CURRENT_DESKTOP 2>/dev/null || true
+pcmanfm --desktop --profile linux95 >/dev/null 2>&1 &
+nm-applet >/dev/null 2>&1 &
+exec jwm

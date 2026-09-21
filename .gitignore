@@ -1,0 +1,8 @@
+chroot/
+cache/
+binary/
+.build/
+*.iso
+*.log
+live-image-*
+wget-log*

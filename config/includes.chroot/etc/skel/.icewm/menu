@@ -1,0 +1,7 @@
+prog "File Manager" folder pcmanfm
+prog "Web Browser" web-browser firefox-esr
+prog "Terminal" utilities-terminal lxterminal
+prog "Text Editor" text-editor mousepad
+separator
+prog "System Monitor" utilities-system-monitor lxterminal -e htop
+prog "About Linux95" dialog-information lxterminal -e sh -c 'fastfetch; read'

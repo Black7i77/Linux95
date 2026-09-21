@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Install Linux95
+Comment=Install Linux95 onto this computer
+Exec=/usr/bin/calamares-install-debian
+Icon=install-debian
+Terminal=false
+Categories=System;

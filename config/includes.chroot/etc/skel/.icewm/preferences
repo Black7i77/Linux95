@@ -1,0 +1,11 @@
+Theme="Linux95/default.theme"
+ShowTaskBar=1
+TaskBarAtTop=0
+TaskBarShowClock=1
+TaskBarShowWorkspaces=0
+TaskBarShowWindowListMenu=1
+TaskBarShowCPUStatus=0
+TaskBarShowNetStatus=0
+ShowProgramsMenu=1
+ShowHelp=0
+ShowLogoutMenu=1

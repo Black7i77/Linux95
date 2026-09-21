@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=System Info
+Exec=lxterminal -e fastfetch
+Icon=computer
+Terminal=false

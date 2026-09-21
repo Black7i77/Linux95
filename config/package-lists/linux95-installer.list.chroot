@@ -1,0 +1,10 @@
+calamares
+calamares-settings-debian
+grub2-common
+grub-pc-bin
+grub-efi-amd64-bin
+efibootmgr
+parted
+dosfstools
+e2fsprogs
+rsync

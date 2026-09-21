@@ -1,0 +1,48 @@
+* {
+  font-family: "DejaVu Sans", Sans;
+  font-size: 10pt;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+window,
+dialog,
+.background,
+.view,
+box,
+notebook {
+  background-color: #c0c0c0;
+  color: #000000;
+}
+
+button {
+  background: #c0c0c0;
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  padding: 4px 9px;
+}
+
+button:active,
+button:checked {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #a8a8a8;
+}
+
+entry,
+textview,
+treeview {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid;
+  border-color: #404040 #ffffff #ffffff #404040;
+}
+
+menubar,
+menu,
+toolbar,
+headerbar {
+  background: #c0c0c0;
+  color: #000000;
+}

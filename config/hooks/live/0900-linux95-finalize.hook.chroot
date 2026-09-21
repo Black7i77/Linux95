@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+mkdir -p /etc/lightdm/lightdm.conf.d
+
+cat > /etc/lightdm/lightdm.conf.d/50-linux95-autologin.conf <<'CONF'
+[Seat:*]
+autologin-user=user
+autologin-user-timeout=0
+user-session=linux95
+greeter-session=lightdm-gtk-greeter
+CONF
+
+cat > /etc/sudoers.d/live-user <<'CONF'
+user ALL=(ALL) NOPASSWD:ALL
+CONF
+chmod 440 /etc/sudoers.d/live-user
+
+echo linux95 > /etc/hostname
+
+systemctl enable NetworkManager >/dev/null 2>&1 || true
+systemctl enable lightdm >/dev/null 2>&1 || true

@@ -1,0 +1,13 @@
+style "linux95-default"
+{
+  bg[NORMAL]      = "#c0c0c0"
+  bg[PRELIGHT]    = "#d8d8d8"
+  bg[ACTIVE]      = "#a8a8a8"
+  bg[SELECTED]    = "#000080"
+  fg[NORMAL]      = "#000000"
+  fg[SELECTED]    = "#ffffff"
+  base[NORMAL]    = "#ffffff"
+  text[NORMAL]    = "#000000"
+}
+class "*" style "linux95-default"
+gtk-font-name = "DejaVu Sans 10"

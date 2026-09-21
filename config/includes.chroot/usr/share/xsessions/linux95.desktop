@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Linux95
+Comment=Linux95 Classic Desktop
+Exec=icewm-session
+TryExec=icewm-session
+Type=Application
+DesktopNames=ICEWM

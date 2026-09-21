@@ -1,0 +1,3 @@
+prog "Files" folder pcmanfm
+prog "Terminal" utilities-terminal lxterminal
+prog "Firefox" web-browser firefox-esr
