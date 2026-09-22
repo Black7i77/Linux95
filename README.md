@@ -62,3 +62,18 @@ ISO filename:
 
 ```text
 Linux95-Debian-IceWM-v3.iso
+
+## 🚧 Coming in Linux95 v4.1
+
+Linux95 development continues!
+
+- 🐧 Improved Linux95 desktop experience
+- 🖥️ Working System Info application
+- ℹ️ New About Linux95 window
+- 🎨 Improved wallpaper and desktop configuration
+- 💿 Cleaner installed-system experience
+- 🧹 Installer shortcut removed after installation
+- 🛠️ General bug fixes and desktop polish
+- 📦 Improved reproducible ISO build system
+
+More features are in development.
