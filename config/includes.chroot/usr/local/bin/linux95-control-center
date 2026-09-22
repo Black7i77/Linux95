@@ -1,0 +1,45 @@
+#!/bin/sh
+
+while true; do
+    CHOICE=$(zenity --list \
+        --title="Linux95 Control Center" \
+        --width=600 \
+        --height=480 \
+        --text="Linux95 Control Center\nChoose a system tool:" \
+        --column="System Tools" \
+        "System Information" \
+        "Update Manager" \
+        "Software Manager" \
+        "File Manager" \
+        "Network Connections" \
+        "Audio Settings" \
+        "About Linux95" \
+        "Exit")
+
+    case "$CHOICE" in
+        "System Information")
+            /usr/local/bin/linux95-system-info
+            ;;
+        "Update Manager")
+            /usr/local/bin/linux95-update-manager
+            ;;
+        "Software Manager")
+            /usr/local/bin/linux95-software-manager
+            ;;
+        "File Manager")
+            pcmanfm &
+            ;;
+        "Network Connections")
+            nm-connection-editor &
+            ;;
+        "Audio Settings")
+            pavucontrol &
+            ;;
+        "About Linux95")
+            /usr/local/bin/linux95-about
+            ;;
+        "Exit"|"")
+            exit 0
+            ;;
+    esac
+done

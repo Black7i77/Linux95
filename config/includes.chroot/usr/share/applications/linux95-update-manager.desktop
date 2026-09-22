@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Linux95 Update Manager
+Comment=Check Linux95 for software updates
+Exec=/usr/local/bin/linux95-update-manager
+Icon=system-software-update
+Terminal=false
+Categories=System;Settings;

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+INFO="$(uname -srmo)"
+
+zenity --info \
+  --title="About Linux95" \
+  --width=500 \
+  --height=320 \
+  --text="<span size='xx-large' weight='bold'>Linux95</span>
+
+<b>Linux for a brighter tomorrow.</b>
+
+Version: 4.1
+Base: Debian 13 (Trixie)
+Desktop: IceWM
+Architecture: $(uname -m)
+Kernel: $INFO
+
+Linux95 is a lightweight retro-inspired Linux distribution
+built around freedom, simplicity and user control.
+
+© 2026 Linux95 Project"

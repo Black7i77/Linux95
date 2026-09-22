@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Linux95 Software Manager
+Comment=Search, install and remove software
+Exec=/usr/local/bin/linux95-software-manager
+Icon=system-software-install
+Terminal=false
+Categories=System;Settings;

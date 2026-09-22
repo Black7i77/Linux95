@@ -1,0 +1,33 @@
+#!/bin/sh
+
+zenity --question \
+  --title="Linux95 Update Manager" \
+  --width=450 \
+  --text="Check for Linux95 system updates now?" || exit 0
+
+pkexec sh -c '
+apt update || exit 1
+apt list --upgradable 2>/dev/null > /tmp/linux95-updates.txt
+'
+
+if [ $? -ne 0 ]; then
+    zenity --error \
+      --title="Linux95 Update Manager" \
+      --text="Unable to check for updates."
+    exit 1
+fi
+
+UPDATES=$(sed '1d' /tmp/linux95-updates.txt)
+
+if [ -z "$UPDATES" ]; then
+    zenity --info \
+      --title="Linux95 Update Manager" \
+      --text="Linux95 is up to date."
+else
+    printf '%s\n' "$UPDATES" | zenity --text-info \
+      --title="Linux95 Updates Available" \
+      --width=750 \
+      --height=500
+fi
+
+rm -f /tmp/linux95-updates.txt

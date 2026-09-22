@@ -1,0 +1,24 @@
+#!/bin/sh
+
+HOST="$(hostname)"
+KERNEL="$(uname -r)"
+ARCH="$(uname -m)"
+CPU="$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//')"
+RAM="$(free -h | awk '/^Mem:/ {print $2}')"
+
+zenity --info \
+  --title="Linux95 System Information" \
+  --width=520 \
+  --height=360 \
+  --text="<span size='xx-large' weight='bold'>Linux95 System Information</span>
+
+<b>Computer:</b> $HOST
+<b>Operating System:</b> Linux95 4.1
+<b>Base:</b> Debian 13 (Trixie)
+<b>Desktop:</b> IceWM
+<b>Kernel:</b> $KERNEL
+<b>Architecture:</b> $ARCH
+<b>Processor:</b> $CPU
+<b>Memory:</b> $RAM
+
+Linux for a brighter tomorrow."

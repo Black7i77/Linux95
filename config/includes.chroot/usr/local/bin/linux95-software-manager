@@ -1,0 +1,80 @@
+#!/bin/sh
+
+while true; do
+    ACTION=$(zenity --list \
+        --title="Linux95 Software Manager" \
+        --width=520 \
+        --height=350 \
+        --text="Install and manage software on Linux95" \
+        --column="Software" \
+        "Search Packages" \
+        "Install Package" \
+        "Remove Package" \
+        "Exit")
+
+    case "$ACTION" in
+
+        "Search Packages")
+            QUERY=$(zenity --entry \
+                --title="Search Software" \
+                --text="Enter a package or program name:")
+
+            [ -z "$QUERY" ] && continue
+
+            apt-cache search "$QUERY" | head -100 | \
+                zenity --text-info \
+                --title="Linux95 Software Search" \
+                --width=750 \
+                --height=500
+            ;;
+
+        "Install Package")
+            PACKAGE=$(zenity --entry \
+                --title="Install Software" \
+                --text="Enter the exact Debian package name:")
+
+            [ -z "$PACKAGE" ] && continue
+
+            if ! apt-cache show "$PACKAGE" >/dev/null 2>&1; then
+                zenity --error \
+                    --title="Linux95 Software Manager" \
+                    --text="Package '$PACKAGE' was not found."
+                continue
+            fi
+
+            zenity --question \
+                --title="Install Software" \
+                --text="Install '$PACKAGE'?" || continue
+
+            pkexec apt-get install -y "$PACKAGE"
+
+            if [ $? -eq 0 ]; then
+                zenity --info \
+                    --title="Linux95 Software Manager" \
+                    --text="'$PACKAGE' was installed successfully."
+            else
+                zenity --error \
+                    --title="Linux95 Software Manager" \
+                    --text="Installation failed."
+            fi
+            ;;
+
+        "Remove Package")
+            PACKAGE=$(zenity --entry \
+                --title="Remove Software" \
+                --text="Enter the exact package name:")
+
+            [ -z "$PACKAGE" ] && continue
+
+            zenity --question \
+                --title="Remove Software" \
+                --text="Remove '$PACKAGE'?" || continue
+
+            pkexec apt-get remove "$PACKAGE"
+            ;;
+
+        "Exit"|"")
+            exit 0
+            ;;
+    esac
+done

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=About Linux95
+Comment=Information about Linux95
+Exec=/usr/local/bin/linux95-about
+Icon=computer
+Terminal=false
+Categories=System;

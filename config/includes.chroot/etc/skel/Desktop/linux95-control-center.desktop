@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Linux95 Control Center
+Comment=Configure and manage Linux95
+Exec=/usr/local/bin/linux95-control-center
+Icon=preferences-system
+Terminal=false
+Categories=Settings;System;

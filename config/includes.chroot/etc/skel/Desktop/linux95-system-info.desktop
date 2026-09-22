@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=System Info
+Comment=View Linux95 system information
+Exec=/usr/local/bin/linux95-system-info
+Icon=computer
+Terminal=false
+Categories=System;
