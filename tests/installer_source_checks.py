@@ -78,3 +78,86 @@ require(
 )
 
 print("installer source checks: PASS")
+
+branding = root / "config/includes.chroot/etc/calamares/branding/linux95/branding.desc"
+hook = root / "config/hooks/live/0910-linux95-calamares-branding.hook.chroot"
+
+require(
+    branding.exists(),
+    "Linux95 Calamares branding.desc is missing",
+)
+
+branding_text = branding.read_text()
+
+for expected in (
+    "componentName: linux95",
+    "productName: Linux95",
+    "shortProductName: Linux95",
+    'version: "4.2"',
+    'shortVersion: "4.2"',
+    'versionedName: "Linux95 4.2"',
+    'shortVersionedName: "Linux95 4.2"',
+    "bootloaderEntryName: Linux95",
+    "welcomeStyleCalamares: false",
+    "windowExpanding: normal",
+    "windowSize: 800px,520px",
+    "navigation: widget",
+    "sidebar: widget",
+):
+    require(
+        expected in branding_text,
+        f"branding.desc missing: {expected}",
+    )
+
+require(
+    hook.exists(),
+    "Linux95 Calamares branding hook is missing",
+)
+
+hook_text = hook.read_text()
+
+require(
+    "/etc/calamares/settings.conf" in hook_text,
+    "branding hook must target settings.conf",
+)
+require(
+    "branding: debian" in hook_text,
+    "branding hook must expect Debian branding",
+)
+require(
+    "branding: linux95" in hook_text,
+    "branding hook must select Linux95 branding",
+)
+
+for forbidden in (
+    "partition",
+    "bootloader",
+    "unpackfs",
+    "mkfs",
+    "grub-install",
+):
+    require(
+        forbidden not in hook_text,
+        f"branding hook must not modify installer engine behavior: {forbidden}",
+    )
+
+require(
+    "grep -Ec" in hook_text,
+    "branding hook must count matching branding lines",
+)
+require(
+    '"$count" -ne 1' in hook_text,
+    "branding hook must require exactly one Debian branding line",
+)
+require(
+    "sed -i -E" in hook_text,
+    "branding hook must use one targeted branding replacement",
+)
+require(
+    "branding:[[:space:]]*debian" in hook_text,
+    "branding hook must specifically match Debian branding",
+)
+require(
+    "branding: linux95" in hook_text,
+    "branding hook must replace Debian branding with Linux95 branding",
+)

@@ -1,0 +1,27 @@
+---
+componentName: linux95
+
+welcomeStyleCalamares: false
+welcomeExpandingLogo: true
+
+windowExpanding: normal
+windowSize: 800px,520px
+windowPlacement: center
+
+sidebar: widget
+navigation: widget
+
+strings:
+    productName: Linux95
+    shortProductName: Linux95
+    version: "4.2"
+    shortVersion: "4.2"
+    versionedName: "Linux95 4.2"
+    shortVersionedName: "Linux95 4.2"
+    bootloaderEntryName: Linux95
+
+    productUrl: ""
+    supportUrl: ""
+    knownIssuesUrl: ""
+    releaseNotesUrl: ""
+    donateUrl: ""

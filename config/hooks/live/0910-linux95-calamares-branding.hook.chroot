@@ -1,0 +1,35 @@
+#!/bin/sh
+set -eu
+
+settings=/etc/calamares/settings.conf
+
+if [ ! -f "$settings" ]; then
+    echo "Linux95: missing $settings" >&2
+    exit 1
+fi
+
+count=$(
+    grep -Ec \
+        '^[[:space:]]*branding:[[:space:]]*debian[[:space:]]*$' \
+        "$settings" || true
+)
+
+if [ "$count" -ne 1 ]; then
+    echo "Linux95: expected exactly one active branding: debian line" >&2
+    exit 1
+fi
+
+sed -i -E \
+    's/^[[:space:]]*branding:[[:space:]]*debian[[:space:]]*$/branding: linux95/' \
+    "$settings"
+
+count=$(
+    grep -Ec \
+        '^[[:space:]]*branding:[[:space:]]*linux95[[:space:]]*$' \
+        "$settings" || true
+)
+
+if [ "$count" -ne 1 ]; then
+    echo "Linux95: failed to select branding: linux95" >&2
+    exit 1
+fi
