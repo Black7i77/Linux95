@@ -161,3 +161,64 @@ require(
     "branding: linux95" in hook_text,
     "branding hook must replace Debian branding with Linux95 branding",
 )
+
+branding_art = (
+    root
+    / "config/includes.chroot/etc/calamares/branding/linux95/linux95-installer.svg"
+)
+
+desktop_art = (
+    root
+    / "config/includes.chroot/usr/share/pixmaps/linux95-installer.svg"
+)
+
+require(
+    branding_art.exists(),
+    "Linux95 Calamares installer artwork is missing",
+)
+
+require(
+    desktop_art.exists(),
+    "Linux95 desktop installer icon is missing",
+)
+
+branding_art_text = branding_art.read_text()
+desktop_art_text = desktop_art.read_text()
+
+for name, text in (
+    ("branding artwork", branding_art_text),
+    ("desktop artwork", desktop_art_text),
+):
+    require(
+        "<svg" in text,
+        f"{name} must contain an SVG root",
+    )
+    lowered = text.lower()
+
+    external_refs = (
+        'href="http://',
+        'href="https://',
+        "href='http://",
+        "href='https://",
+        'xlink:href="http://',
+        'xlink:href="https://',
+        "xlink:href='http://",
+        "xlink:href='https://",
+        "url(http://",
+        "url(https://",
+    )
+
+    require(
+        not any(ref in lowered for ref in external_refs),
+        f"{name} must not depend on external network resources",
+    )
+
+require(
+    'productIcon: "linux95-installer.svg"' in branding_text,
+    "branding.desc must use Linux95 installer productIcon",
+)
+
+require(
+    'productLogo: "linux95-installer.svg"' in branding_text,
+    "branding.desc must use Linux95 installer productLogo",
+)

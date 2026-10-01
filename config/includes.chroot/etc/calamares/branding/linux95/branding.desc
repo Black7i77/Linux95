@@ -19,6 +19,8 @@ strings:
     versionedName: "Linux95 4.2"
     shortVersionedName: "Linux95 4.2"
     bootloaderEntryName: Linux95
+    productIcon: "linux95-installer.svg"
+    productLogo: "linux95-installer.svg"
 
     productUrl: ""
     supportUrl: ""
