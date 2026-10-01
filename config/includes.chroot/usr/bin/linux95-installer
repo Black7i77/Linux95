@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+if [ ! -x /usr/bin/calamares-install-debian ]; then
+    echo "Linux95 Installer: Debian Calamares helper not found" >&2
+    exit 127
+fi
+
+exec /usr/bin/calamares-install-debian "$@"
