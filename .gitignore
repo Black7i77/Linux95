@@ -6,3 +6,5 @@ binary/
 *.log
 live-image-*
 wget-log*
+
+.worktrees/
