@@ -13,7 +13,7 @@ zenity --info \
   --text="<span size='xx-large' weight='bold'>Linux95 System Information</span>
 
 <b>Computer:</b> $HOST
-<b>Operating System:</b> Linux95 4.1
+<b>Operating System:</b> Linux95 4.3
 <b>Base:</b> Debian 13 (Trixie)
 <b>Desktop:</b> IceWM
 <b>Kernel:</b> $KERNEL

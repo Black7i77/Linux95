@@ -93,10 +93,10 @@ for expected in (
     "componentName: linux95",
     "productName: Linux95",
     "shortProductName: Linux95",
-    'version: "4.2"',
-    'shortVersion: "4.2"',
-    'versionedName: "Linux95 4.2"',
-    'shortVersionedName: "Linux95 4.2"',
+    'version: "4.3"',
+    'shortVersion: "4.3"',
+    'versionedName: "Linux95 4.3"',
+    'shortVersionedName: "Linux95 4.3"',
     "bootloaderEntryName: Linux95",
     "welcomeStyleCalamares: false",
     "windowExpanding: normal",
@@ -221,4 +221,74 @@ require(
 require(
     'productLogo: "linux95-installer.svg"' in branding_text,
     "branding.desc must use Linux95 installer productLogo",
+)
+
+about = root / "config/includes.chroot/usr/local/bin/linux95-about"
+system_info = root / "config/includes.chroot/usr/local/bin/linux95-system-info"
+packages = root / "config/package-lists/linux95.list.chroot"
+time_hook = root / "config/hooks/live/0920-linux95-time-sync.hook.chroot"
+
+require(about.exists(), "Linux95 About script is missing")
+about_text = about.read_text()
+
+require(
+    "Version: 4.3" in about_text,
+    "About Linux95 must report version 4.3",
+)
+require(
+    "Creator: Scott Pollock" in about_text,
+    "About Linux95 must credit Scott Pollock as Creator",
+)
+
+require(system_info.exists(), "Linux95 System Info script is missing")
+system_info_text = system_info.read_text()
+
+require(
+    "Linux95 4.3" in system_info_text,
+    "System Info must report Linux95 4.3",
+)
+require(
+    "Linux95 4.1" not in system_info_text,
+    "System Info must not report the old 4.1 version",
+)
+
+require(packages.exists(), "Linux95 package list is missing")
+packages_text = packages.read_text()
+
+require(
+    "systemd-timesyncd" in packages_text,
+    "Linux95 must include systemd-timesyncd for automatic clock synchronization",
+)
+
+require(
+    time_hook.exists(),
+    "Linux95 time synchronization build hook is missing",
+)
+
+time_hook_text = time_hook.read_text()
+
+require(
+    "systemd-timesyncd.service" in time_hook_text,
+    "time synchronization hook must enable systemd-timesyncd",
+)
+
+legacy_system_info = (
+    root / "config/includes.chroot/etc/skel/Desktop/System-Info.desktop"
+)
+linux95_system_info_launcher = (
+    root / "config/includes.chroot/etc/skel/Desktop/linux95-system-info.desktop"
+)
+
+require(
+    not legacy_system_info.exists(),
+    "old duplicate Fastfetch System Info desktop launcher must be removed",
+)
+require(
+    linux95_system_info_launcher.exists(),
+    "Linux95 System Info desktop launcher must remain",
+)
+require(
+    "Exec=/usr/local/bin/linux95-system-info"
+    in linux95_system_info_launcher.read_text(),
+    "Linux95 System Info launcher must use the Linux95 system-info tool",
 )

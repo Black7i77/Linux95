@@ -14,10 +14,10 @@ navigation: widget
 strings:
     productName: Linux95
     shortProductName: Linux95
-    version: "4.2"
-    shortVersion: "4.2"
-    versionedName: "Linux95 4.2"
-    shortVersionedName: "Linux95 4.2"
+    version: "4.3"
+    shortVersion: "4.3"
+    versionedName: "Linux95 4.3"
+    shortVersionedName: "Linux95 4.3"
     bootloaderEntryName: Linux95
     productIcon: "linux95-installer.svg"
     productLogo: "linux95-installer.svg"

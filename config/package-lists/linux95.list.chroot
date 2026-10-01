@@ -3,3 +3,5 @@ pavucontrol
 arandr
 network-manager-gnome
 linux-image-amd64
+
+systemd-timesyncd
