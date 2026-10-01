@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="20" fill="#c0c0c0"/>
+  <rect x="18" y="18" width="220" height="220" rx="10" fill="#e6e6e6" stroke="#000" stroke-width="4"/>
+
+  <!-- Retro top bar -->
+  <rect x="28" y="28" width="200" height="24" fill="#000080"/>
+  <circle cx="42" cy="40" r="4" fill="#ff5f57"/>
+  <circle cx="56" cy="40" r="4" fill="#ffbd2e"/>
+  <circle cx="70" cy="40" r="4" fill="#28c840"/>
+
+  <!-- Main installer panel -->
+  <rect x="42" y="72" width="172" height="88" fill="#ffffff" stroke="#000" stroke-width="3"/>
+  <rect x="54" y="86" width="88" height="12" fill="#000080"/>
+  <rect x="54" y="108" width="116" height="8" fill="#808080"/>
+  <rect x="54" y="122" width="104" height="8" fill="#808080"/>
+  <rect x="54" y="136" width="92" height="8" fill="#808080"/>
+
+  <!-- Arrow / install cue -->
+  <polygon points="178,102 206,116 178,130" fill="#008080"/>
+  <rect x="150" y="112" width="34" height="8" fill="#008080"/>
+
+  <!-- Bottom badge -->
+  <rect x="42" y="178" width="172" height="40" fill="#000080"/>
+  <text x="128" y="203" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="20" font-weight="bold"
+        fill="#ffffff">Linux95</text>
+</svg>

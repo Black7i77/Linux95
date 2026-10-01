@@ -10,7 +10,8 @@ zenity --info \
 
 <b>Linux for a brighter tomorrow.</b>
 
-Version: 4.1
+Version: 4.3
+Creator: Scott Pollock
 Base: Debian 13 (Trixie)
 Desktop: IceWM
 Architecture: $(uname -m)

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+if ! command -v systemctl >/dev/null 2>&1; then
+    echo "Linux95: systemctl is required to enable time synchronization" >&2
+    exit 1
+fi
+
+systemctl enable systemd-timesyncd.service

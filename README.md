@@ -8,9 +8,9 @@ It uses **IceWM**, PCManFM, custom Linux95 GTK styling, a dedicated Linux95 desk
 
 ---
 
-## Linux95 v4.2 Kernel Preview
+## Linux95 v4.3 Kernel Preview
 
-Linux95 v4.2 Kernel Preview introduces the first custom Linux95 kernel build.
+Linux95 v4.3 Kernel Preview continues development of the custom Linux95 kernel and desktop.
 
 ### Current base
 
@@ -61,7 +61,7 @@ Prebuilt Linux95 ISO images are published through GitHub Releases:
 
 [Download Linux95 releases](../../releases)
 
-### Linux95 v4.2 Kernel Preview
+### Linux95 v4.3 Kernel Preview
 
 **Status:** Pre-release / testing build
 
@@ -91,7 +91,7 @@ Linux95 v4.1 remains available from the GitHub Releases page.
 
 ## Linux95 Kernel
 
-Linux95 v4.2 Kernel Preview includes:
+Linux95 v4.3 Kernel Preview includes:
 
 ```text
 linux-image-6.12.107-linux95
